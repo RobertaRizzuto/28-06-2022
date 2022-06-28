@@ -12,9 +12,13 @@ const oneOfUsEl = newEl("p");
 const notOneOfUsEl = newEl("p");
 const contentEl = newEl("main");
 const ratingtitleEl = newEl("h5");
+const sectionCaptionEl= newEl("h3")
 const ratingEl = newEl("section");
+const sectionCaptionEl1= newEl("h3")
 const betweenPriceEl = newEl("section");
+const sectionCaptionEl2= newEl("h3")
 const electronicsEl = newEl("section");
+const sectionCaptionEl3= newEl("h3")
 const womanClothesEl = newEl("section");
 const helloElTwo = newEl("h3");
 const footerEl = newEl("footer");
@@ -31,6 +35,9 @@ womanClothesEl.className = "womanClothes";
 electronicsEl.className = "electronics";
 contentEl.className = "main_content";
 footerEl.className = "footerBar";
+sectionCaptionEl.className, sectionCaptionEl1.className, sectionCaptionEl2.className, sectionCaptionEl3.className = "section_caption";
+
+
 
 helloEl.textContent = `Hi ${userLogIn}!`;
 welcomeEl.textContent = "Welcome to your personal shopping page";
@@ -38,10 +45,15 @@ oneOfUsEl.textContent =
   "You are one of us now, contratulations! Enjoy some shopping suggestions ";
 notOneOfUsEl.textContent =
   "Seems like you're not one of us yet, but we are gonna make up for that! Try to refresh this page and insert your username again ;)";
+  sectionCaptionEl.textContent = "Rated by more than 200 people";
+  sectionCaptionEl1.textContent = "From $50 to $100";
+  sectionCaptionEl2.textContent = "Electronic";
+  sectionCaptionEl3.textContent = "Women's clothes";
+
 
 headerEl.append(helloEl);
 $body.appendChild(headerEl);
-contentEl.append(ratingEl, betweenPriceEl, electronicsEl, womanClothesEl);
+contentEl.append(sectionCaptionEl,ratingEl,sectionCaptionEl1, betweenPriceEl,sectionCaptionEl2, electronicsEl,sectionCaptionEl3, womanClothesEl);
 $body.appendChild(contentEl);
 footerEl.append(helloElTwo);
 $body.appendChild(footerEl);
@@ -90,8 +102,8 @@ fetch(BASE_URL)
           betweenPriceEl,
           product.image,
           product.title,
-          product.rating.count,
           product.price,
+          product.rating.count,
           product.category
         )
       );
@@ -102,20 +114,19 @@ fetch(BASE_URL)
           electronicsEl,
           product.image,
           product.title,
-          product.rating.count,
           product.price,
+          product.rating.count,
           product.category
         )
       );
-      data
+    data
       .filter((product) => product.category === "women's clothing")
       .map((product) =>
         cardFormat(
-          womanClothesEl,
           product.image,
           product.title,
-          product.rating.count,
           product.price,
+          product.rating.count,
           product.category
         )
       );
