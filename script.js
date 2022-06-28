@@ -6,13 +6,16 @@ const $body = document.body;
 const BASE_URL = "https://fakestoreapi.com/products";
 
 const headerEl = newEl("nav");
-const helloEl = newEl("h3");
-const welcomeEl = newEl("p");
+const helloEl = newEl("h2");
+const welcomeEl = newEl("h4");
 const oneOfUsEl = newEl("p");
 const notOneOfUsEl = newEl("p");
 const contentEl = newEl("main");
-const availabletitleEl = newEl("h4");
-const availableEl = newEl("section");
+const ratingtitleEl = newEl("h5");
+const ratingEl = newEl("section");
+const betweenPriceEl = newEl("section");
+const electronicsEl = newEl("section");
+const womanClothesEl = newEl("section");
 const helloElTwo = newEl("h3");
 const footerEl = newEl("footer");
 
@@ -21,8 +24,11 @@ helloEl.className = "hello";
 welcomeEl.className = "welcome";
 oneOfUsEl.className = "one_of_us";
 notOneOfUsEl.className = "not_one_of_us";
-availableEl.className = "available";
-availabletitleEl.className = "available_h2";
+ratingEl.className = "rating";
+ratingtitleEl.className = "rating_h2";
+betweenPriceEl.className = "betweenprice";
+womanClothesEl.className = "womanClothes";
+electronicsEl.className = "electronics";
 contentEl.className = "main_content";
 footerEl.className = "footerBar";
 
@@ -32,14 +38,10 @@ oneOfUsEl.textContent =
   "You are one of us now, contratulations! Enjoy some shopping suggestions ";
 notOneOfUsEl.textContent =
   "Seems like you're not one of us yet, but we are gonna make up for that! Try to refresh this page and insert your username again ;)";
-;
-
-
-
 
 headerEl.append(helloEl);
 $body.appendChild(headerEl);
-contentEl.appendChild(availableEl);
+contentEl.append(ratingEl, betweenPriceEl, electronicsEl, womanClothesEl);
 $body.appendChild(contentEl);
 footerEl.append(helloElTwo);
 $body.appendChild(footerEl);
@@ -73,13 +75,52 @@ fetch(BASE_URL)
       .filter((product) => product.rating.count >= 200)
       .map((product) =>
         cardFormat(
-          availableEl,
+          ratingEl,
           product.image,
           product.title,
           product.price,
-          product.rating.count
+          product.rating.count,
+          product.category
         )
-      );headerEl.appendChild(availabletitleEl)
-    availabletitleEl.textContent = `available product: ${filteredProduct.length}`
-    helloElTwo.textContent = `${userLogIn}, number of products you saw today: ${filteredProduct.length}`;
+      );
+    data
+      .filter((product) => product.price >= 50 && product.price <= 100)
+      .map((product) =>
+        cardFormat(
+          betweenPriceEl,
+          product.image,
+          product.title,
+          product.rating.count,
+          product.price,
+          product.category
+        )
+      );
+    data
+      .filter((product) => product.category === "electronics")
+      .map((product) =>
+        cardFormat(
+          electronicsEl,
+          product.image,
+          product.title,
+          product.rating.count,
+          product.price,
+          product.category
+        )
+      );
+      data
+      .filter((product) => product.category === "women's clothing")
+      .map((product) =>
+        cardFormat(
+          womanClothesEl,
+          product.image,
+          product.title,
+          product.rating.count,
+          product.price,
+          product.category
+        )
+      );
+
+    headerEl.appendChild(ratingtitleEl);
+    ratingtitleEl.textContent = `product rated over 200 times: ${filteredProduct.length}`;
+    helloElTwo.textContent = `${userLogIn}, here's the number of products you saw today rated over 200 times: ${filteredProduct.length}`;
   });

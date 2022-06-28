@@ -1,53 +1,85 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300");
+html {
+  font-family: "Raleway", sans-serif;
+}
 body {
-  background-color: rgb(166, 254, 254);
+  background-color:#FFffff;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
-}
-html {
-  font-family: "Raleway", sans-serif;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.975);
-}
-p,h3 {
+  
   margin: 0px;
 }
-.not_one_of_us,
-.one_of_us {
-  background-color: rgb(251, 251, 251);
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.168);
+p,h3,h4,h5,h2 {
+  margin: 0px;
 }
-.hello,
-.welcome {
-  font-family: "Titan One", cursive;
+main{
+  margin: 10px;
+}
+.navBar{
+  background-color: #333D51;
+  color: white;
+  display: flex;
+  flex-direction:column;
+  gap: 10px;
+  padding: 10px;
+  
+}
+.hello, .welcome{
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.975);
   color: rgb(251, 251, 251);
   padding: auto;
 }
+.not_one_of_us,
+.one_of_us {
+  color: #333D51;
+  background-color: rgb(251, 251, 251);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.168);
+}
 
-.avaible {
+
+.rating ,.betweenprice, .electronics,.womanClothes {
+  background-color: #F4F3EA;
+  border-radius: 20px;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.45);
+  margin: 20px;
+ box-shadow: 0 0 4px rgba(0, 0, 0, 0.178);
 }
+
 .wrapper {
+  background-color:#CBD0D8;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
+  justify-content: space-evenly;
   padding: 20px;
-  width: 150px;
-  height: 350px;
+  width: 170px;
+  height: 400px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.178);
   border-radius: 8px;
 }
+.wrapper:hover{
+  transform: scale(1.2);
+}
 img {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
+}
+
+.footerBar{
+  background-color: #D3AC2B;
+  color: white;
+  display: flex;
+  flex-direction:column;
+  gap: 10px;
+  padding: 10px;
+  
 }
