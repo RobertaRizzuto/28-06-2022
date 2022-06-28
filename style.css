@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Titan+One&display=swap");
+body {
+  background-color: rgb(166, 254, 254);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+html {
+  font-family: "Raleway", sans-serif;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.975);
+}
+p,h3 {
+  margin: 0px;
+}
+.not_one_of_us,
+.one_of_us {
+  background-color: rgb(251, 251, 251);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.168);
+}
+.hello,
+.welcome {
+  font-family: "Titan One", cursive;
+  color: rgb(251, 251, 251);
+  padding: auto;
+}
+
+.avaible {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.45);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 150px;
+  height: 350px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.178);
+  border-radius: 8px;
+}
+img {
+  width: 150px;
+  height: 150px;
+}
