@@ -123,6 +123,7 @@ fetch(BASE_URL)
       .filter((product) => product.category === "women's clothing")
       .map((product) =>
         cardFormat(
+          womanClothesEl,
           product.image,
           product.title,
           product.price,
