@@ -81,5 +81,5 @@ fetch(BASE_URL)
         )
       );headerEl.appendChild(availabletitleEl)
     availabletitleEl.textContent = `available product: ${filteredProduct.length}`
-    helloElTwo.textContent = `Hi ${userLogIn}! available product for you to buy: ${filteredProduct.length}`;
+    helloElTwo.textContent = `${userLogIn}, number of products you saw today: ${filteredProduct.length}`;
   });
